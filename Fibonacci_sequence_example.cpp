@@ -1,9 +1,17 @@
 #include <iostream>
 using namespace std;
 
+// Function to calculate the nth Fibonacci number recursively
+int fibonacci(int n) {
+    if (n <= 1) {
+        return n; // base case
+    }
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
 int main() {
-    // Declare variables
-    int n, t1 = 0, t2 = 1, nextTerm;
+    // Declare variable
+    int n;
 
     // Prompt the user to enter the number of terms
     cout << "Enter the number of terms for the Fibonacci sequence: ";
@@ -18,19 +26,11 @@ int main() {
     // Display the Fibonacci sequence
     cout << "Fibonacci Sequence up to " << n << " terms:" << endl;
 
-    // Loop to generate the Fibonacci sequence
-    for (int i = 1; i <= n; ++i) {
-        // Print the current term
-        cout << t1 << " ";
-
-        // Calculate the next term
-        nextTerm = t1 + t2;
-
-        // Update the values of t1 and t2 for the next iteration
-        t1 = t2;
-        t2 = nextTerm;
+    // Loop to generate and print the Fibonacci sequence
+    for (int i = 0; i < n; ++i) {
+        cout << fibonacci(i) << " ";
     }
 
     cout << endl; // Move to the next line after printing the sequence
-    return 0; // Indicate successful program termination
+    return 0; 
 }
