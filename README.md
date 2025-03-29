@@ -10,3 +10,4 @@
   3+2n+2=
   5+2n
   O(n)
+  Runtime for the merge sort algorithm is O(n^2)
